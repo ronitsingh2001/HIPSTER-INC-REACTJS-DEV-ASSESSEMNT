@@ -25,13 +25,15 @@ export default function Header() {
           theme !== "theme2" ? themeClasses : theme2Classes
         } shadow bg-[var(--text-color)] text-[var(--bg-color)]`}
       >
-        <h1
-          className={`text-xl font-bold ${
-            theme === "theme2" ? "hidden sm:block" : ""
+        <div
+          className={`flex  ${
+            theme === "theme2"
+              ? "hidden sm:block bg-[var(--bg-color)] p-2 rounded"
+              : ""
           }`}
         >
-          🌈 Theme App
-        </h1>
+          <img src="./logo.svg" className="mx-auto" alt="" />
+        </div>
         {/* Hamburger icon */}
         <div
           className="flex sm:hidden flex-col items-center gap-1 cursor-pointer"
@@ -75,7 +77,15 @@ export default function Header() {
         } sm:hidden`}
       >
         <div className={`flex justify-between items-center mb-6`}>
-          <h2 className="text-xl font-bold">🌈 Theme App</h2>
+          <div
+            className={`flex  ${
+              theme === "theme2"
+                ? "bg-[var(--bg-color)] p-2 rounded"
+                : ""
+            }`}
+          >
+            <img src="./logo.svg" className="mx-auto" alt="" />
+          </div>
           <button onClick={toggleMobileMenu} className="text-lg">
             ✕
           </button>
